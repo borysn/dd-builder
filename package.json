@@ -1,0 +1,30 @@
+{
+  "name": "dd-builder",
+  "version": "1.0.0",
+  "description": "create desktop dialogues using haml, sass, and js",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/borysn/dd-builder.git"
+  },
+  "keywords": [
+    "haml",
+    "sass",
+    "js",
+    "electron",
+    "popup"
+  ],
+  "author": "borysn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/borysn/dd-builder/issues"
+  },
+  "homepage": "https://github.com/borysn/dd-builder#readme",
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "commander": "^2.9.0"
+  }
+}
