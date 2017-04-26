@@ -4,7 +4,12 @@
   "description": "create desktop dialogues using haml, sass, and js",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "lint": "eslint .",
+    "prestart": "npm run lint",
+    "start": "npm run help",
+    "build": "./index.js b",
+    "help": "./index.js h"
   },
   "repository": {
     "type": "git",
@@ -25,6 +30,11 @@
   "homepage": "https://github.com/borysn/dd-builder#readme",
   "dependencies": {
     "chalk": "^1.1.3",
-    "commander": "^2.9.0"
+    "commander": "^2.9.0",
+    "electron": "^1.6.6",
+    "ramda": "^0.23.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0"
   }
 }
