@@ -1,0 +1,51 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "lib": ["es6", "dom"],
+    // "allowJs": true,
+    // "checkJs": true,
+    // "jsx": "preserve",
+    "declaration": true,
+    "sourceMap": true,
+    // "outFile": "./bundle.js",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    // "removeComments": true,
+    // "noEmit": true,
+    // "importHelpers": true,
+    // "downlevelIteration": true,
+    // "isolatedModules": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "noImplicitThis": true,
+    // "alwaysStrict": true,
+    // "noUnusedLocals": true,
+    // "noUnusedParameters": true,
+    // "noImplicitReturns": true,
+    // "noFallthroughCasesInSwitch": true,
+    "moduleResolution": "node",
+    "baseUrl": "./",
+    "paths": {
+      "*": [
+        "*"
+      ]
+    },
+    // "rootDirs": [],
+    // "typeRoots": [],
+    "types": [
+      "node",
+      "commander",
+      "chalk",
+      "electron"
+    ],
+    // "allowSyntheticDefaultImports": true,
+    "sourceRoot": "./src",
+    // "mapRoot": "./",
+    // "inlineSourceMap": true,
+    // "inlineSources": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  }
+}
