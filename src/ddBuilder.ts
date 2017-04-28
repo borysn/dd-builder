@@ -9,7 +9,7 @@ import { ddCmdHelp } from './cmd/ddCmdHelp';
 /**
  * script version
  */
-script.version('1.0.0');
+script.version('0.0.1');
 
 /**
  * help
