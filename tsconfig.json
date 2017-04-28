@@ -38,7 +38,8 @@
       "node",
       "commander",
       "chalk",
-      "electron"
+      "electron",
+      "ramda"
     ],
     // "allowSyntheticDefaultImports": true,
     "sourceRoot": "./src",

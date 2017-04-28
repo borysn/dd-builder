@@ -22,7 +22,8 @@
     "sass",
     "js",
     "electron",
-    "popup"
+    "desktop",
+    "dialogue"
   ],
   "author": "borysn",
   "license": "MIT",
