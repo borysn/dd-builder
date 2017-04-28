@@ -32,6 +32,6 @@ export abstract class ddCmd {
    *
    * @returns    ddCmdHelp object detailing alias, description, and usage of the command
    */
-  getHelp(): ddCmdHelp { return this.help; }
+  public getHelp(): ddCmdHelp { return this.help; }
 
 }

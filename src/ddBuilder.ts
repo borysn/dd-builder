@@ -15,26 +15,26 @@ script.version('0.0.1');
  * help
  */
 script
-  .command('help <cmd>')
+  .command('help <cmd> [rest...]')
   .alias('h')
   .alias('-h')
   .alias('--h')
-  .action((cmd) => {
+  .action((cmd, rest) => {
     let help: ddCmd = new ddHelpCmd(new ddCmdHelp("", "", []));
-    help.exec(cmd);
+    help.exec(cmd, rest);
   });
 
 /**
  * build
  */
 script
-  .command('build <dir>')
+  .command('build <cmd> [rest...]')
   .alias('b')
   .alias('-b')
   .alias('--build')
-  .action((dir) => {
+  .action((cmd, rest) => {
     let build: ddCmd = new ddBuildCmd(new ddCmdHelp("", "", []));
-    build.exec(dir);
+    build.exec(cmd, rest);
   });
 
 /**

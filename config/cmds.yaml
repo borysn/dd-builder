@@ -1,0 +1,35 @@
+# cmds.yaml
+# author: borysn
+# license: MIT
+
+#############
+# ddBuilder #
+#############
+ddBuilder:
+
+  #######
+  # cmd #
+  #######
+  cmd:
+    # help
+    help:
+      cmd: "help"
+      alias:
+        - "h"
+        - "-h"
+        - "--help"
+      description:
+        - "show help"
+      usage:
+        - "$ dd-builder h"
+    # build
+    buld:
+      cmd: "build"
+      alias:
+        - "b"
+        - "-b"
+        - "--build"
+      description:
+        - "build desktop dialogue"
+      usage:
+        - "$ dd-builder b <dir>"
