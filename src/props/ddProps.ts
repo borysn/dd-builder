@@ -17,7 +17,7 @@ export class ddProps {
 
   // properties
   private static instance: ddProps
-  private static readonly propFiles = ['../config/cmds.yaml']
+  private static readonly propFiles = ['config/cmds.yaml']
   private props:Map<string, any>
 
   /**
@@ -72,14 +72,14 @@ export class ddProps {
   }
 
   /**
-   * get file name `../config/<fileName>.yaml` using string.match
+   * get fileName `<project root>/config/<fileName>.yaml` using string.match
    *
    * @param   file    file path
-   * @returns         string containing <fileName>, or empty string if no match
+   * @returns         string containing file name, or empty string if no match
    */
   private getFileName(file: string): string {
     let matchArray = file.match('[^\/\.]+(?=(\.yaml))')
-    return matchArray == null ? '' : matchArray[0]
+    return matchArray === null ? '' : matchArray[0]
   }
 
   /**
@@ -89,7 +89,7 @@ export class ddProps {
     try {
       R.forEach(file => {
         try {
-          let config: any = yaml.safeLoad(fs.readFileSync(path.resolve(file), 'utf-9'))
+          let config: any = yaml.safeLoad(fs.readFileSync(path.resolve(file), 'utf-8'))
           let json: any = JSON.parse(JSON.stringify(config))
           this.props.set(this.getFileName(file), json)
         } catch(e) {

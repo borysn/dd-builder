@@ -1,45 +1,53 @@
+#!/usr/bin/env node
+
 /**
  * ddBuilder.ts
  * author: borysn
  * license: MIT
  */
 
-import * as script from 'commander'
+import * as ddBuilder from 'commander'
 import * as chalk from 'chalk'
 
 import { ddCmd } from './cmd/ddCmd'
 import { ddCmdFactory } from './cmd/ddCmdFactory'
+import { ddLogger } from './logging/ddLogger'
+
+// logger
+const log: ddLogger = ddLogger.getInstance();
 
 /**
- * script version
+ * ddBuilder version
  */
-script.version('0.0.1')
+ddBuilder.version('0.0.1')
 
 /**
  * help
  */
-script
-  .command('help <cmd> [rest...]')
+ddBuilder
+  .command('help [cmd] [rest...]')
   .alias('h')
   .alias('-h')
-  .alias('--h')
+  .alias('--help')
   .action((cmd, rest) => {
+    log.info('help cmd invoked')
     ddCmdFactory.getHelpCmd().exec(cmd, rest)
   })
 
 /**
  * build
  */
-script
-  .command('build <cmd> [rest...]')
+ddBuilder
+  .command('build [cmd] [rest...]')
   .alias('b')
   .alias('-b')
   .alias('--build')
   .action((cmd, rest) => {
+    log.info('build cmd invoked')
     ddCmdFactory.getBuildCmd().exec(cmd, rest)
   })
 
 /**
- * run script
+ * run ddBuilder
  */
-script.parse(process.argv)
+ddBuilder.parse(process.argv)

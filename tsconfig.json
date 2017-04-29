@@ -9,11 +9,12 @@
     "declaration": true,
     "sourceRoot": "./src",
     "sourceMap": true,
-    // "outFile": "./bundle.js",
+    // "outFile": "./dist/ddBuilder.js",
     "outDir": "./dist",
     "rootDir": "./src",
-    // "removeComments": true,
+    "removeComments": false,
     // "noEmit": true,
+    "noEmitOnError": true,
     // "importHelpers": true,
     // "downlevelIteration": true,
     // "isolatedModules": true,
@@ -30,7 +31,10 @@
     "baseUrl": "./",
     "paths": {
       "*": [
-        "*"
+        "*",
+        "node_modules/*",
+        "dist/*",
+        "config/*"
       ]
     },
     // "rootDirs": [],
