@@ -40,7 +40,10 @@
       "commander",
       "chalk",
       "electron",
-      "ramda"
+      "ramda",
+      "log4js",
+      "js-yaml",
+      "jsonpath"
     ],
     // "allowSyntheticDefaultImports": true,
     // "mapRoot": "./",
