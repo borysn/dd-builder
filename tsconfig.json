@@ -7,6 +7,7 @@
     // "checkJs": true,
     // "jsx": "preserve",
     "declaration": true,
+    "sourceRoot": "./src",
     "sourceMap": true,
     // "outFile": "./bundle.js",
     "outDir": "./dist",
@@ -42,7 +43,6 @@
       "ramda"
     ],
     // "allowSyntheticDefaultImports": true,
-    "sourceRoot": "./src",
     // "mapRoot": "./",
     // "inlineSourceMap": true,
     // "inlineSources": true,

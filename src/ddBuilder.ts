@@ -1,15 +1,19 @@
-import * as script from 'commander';
-import * as chalk from 'chalk';
+/**
+ * ddBuilder.ts
+ * author: borysn
+ * license: MIT
+ */
 
-import { ddCmd } from './cmd/ddCmd';
-import { ddBuildCmd } from './cmd/ddBuildCmd';
-import { ddHelpCmd } from './cmd/ddHelpCmd';
-import { ddCmdHelp } from './cmd/ddCmdHelp';
+import * as script from 'commander'
+import * as chalk from 'chalk'
+
+import { ddCmd } from './cmd/ddCmd'
+import { ddCmdFactory } from './cmd/ddCmdFactory'
 
 /**
  * script version
  */
-script.version('0.0.1');
+script.version('0.0.1')
 
 /**
  * help
@@ -20,9 +24,8 @@ script
   .alias('-h')
   .alias('--h')
   .action((cmd, rest) => {
-    let help: ddCmd = new ddHelpCmd(new ddCmdHelp("", "", []));
-    help.exec(cmd, rest);
-  });
+    ddCmdFactory.getHelpCmd().exec(cmd, rest)
+  })
 
 /**
  * build
@@ -33,11 +36,10 @@ script
   .alias('-b')
   .alias('--build')
   .action((cmd, rest) => {
-    let build: ddCmd = new ddBuildCmd(new ddCmdHelp("", "", []));
-    build.exec(cmd, rest);
-  });
+    ddCmdFactory.getBuildCmd().exec(cmd, rest)
+  })
 
 /**
  * run script
  */
-script.parse(process.argv);
+script.parse(process.argv)

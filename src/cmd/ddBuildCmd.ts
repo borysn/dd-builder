@@ -1,5 +1,5 @@
-import { ddCmd } from './ddCmd';
-import { ddCmdHelp } from './ddCmdHelp';
+import { ddCmd } from './ddCmd'
+import { ddCmdHelp } from './ddCmdHelp'
 
 /**
  * command to build desktop dialogues
@@ -12,7 +12,7 @@ export class ddBuildCmd extends ddCmd {
    * @param help    command help object
    */
   constructor(protected help: ddCmdHelp) {
-    super(help);
+    super(help)
   }
 
   /**
@@ -22,7 +22,8 @@ export class ddBuildCmd extends ddCmd {
    * @param rest    remainig sub-commands and args
    * @returns       void
    */
-  public exec(cmd: string, ...rest: Array<string>): void {
+  public exec(cmd: string, ...rest: string[]): void {
+    // TODO impl
   }
 
 }

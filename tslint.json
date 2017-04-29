@@ -1,11 +1,12 @@
 {
     "defaultSeverity": "error",
-    "extends": [
-        "tslint:recommended"
-    ],
+    "extends": ["tslint-config-standard"],
     "jsRules": {},
     "rules": {
-      "no-console": [false]
+      "class-name": false,
+      "space-before-function-paren": false,
+      "typedef-whitespace": false,
+      "whitespace": [false, "check-branch", "check-decl", "check-type"]
     },
     "rulesDirectory": []
 }

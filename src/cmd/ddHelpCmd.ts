@@ -4,8 +4,8 @@
  * license: MIT
  */
 
-import { ddCmd } from './ddCmd';
-import { ddCmdHelp } from './ddCmdHelp';
+import { ddCmd } from './ddCmd'
+import { ddCmdHelp } from './ddCmdHelp'
 
 export class ddHelpCmd extends ddCmd {
 
@@ -15,7 +15,7 @@ export class ddHelpCmd extends ddCmd {
    * @param help    command help object
    */
   constructor(protected readonly help: ddCmdHelp) {
-    super(help);
+    super(help)
   }
 
   /**
@@ -26,6 +26,7 @@ export class ddHelpCmd extends ddCmd {
    * @returns       void
    */
   public exec(cmd: string, ...rest: Array<string>): void {
+    // TODO impl
   }
 
 }

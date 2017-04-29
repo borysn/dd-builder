@@ -4,7 +4,7 @@
  * license: MIT
  */
 
-import { ddCmdHelp } from './ddCmdHelp';
+import { ddCmdHelp } from './ddCmdHelp'
 
 /**
  * ddBuilder command interface
@@ -25,13 +25,13 @@ export abstract class ddCmd {
    * @param rest    remainig sub-commands and args
    * @returns       void
    */
-  abstract exec(cmd?: string, ...rest: Array<string>): void;
+  abstract exec(cmd?: string, ...rest: Array<string>): void
 
   /**
    * get command help object for help display
    *
    * @returns    ddCmdHelp object detailing alias, description, and usage of the command
    */
-  public getHelp(): ddCmdHelp { return this.help; }
+  public getHelp(): ddCmdHelp { return this.help }
 
 }

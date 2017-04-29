@@ -23,7 +23,7 @@ ddBuilder:
       usage:
         - "$ dd-builder h"
     # build
-    buld:
+    build:
       cmd: "build"
       alias:
         - "b"
