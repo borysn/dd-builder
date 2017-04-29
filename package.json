@@ -6,13 +6,16 @@
   "scripts": {
     "test": "test",
     "doc": "typedoc --out ./dist/docs ./src",
-    "lint": "tslint ./src/**/*.ts",
+    "lint": "tslint --project ./tsconfig.json --type-check ./src/**/*.ts",
     "prestart": "npm run build",
     "start": "./dist/ddBuilder.js",
     "prebuild": "npm run lint",
     "build": "tsc",
     "watch": "npm run build -w",
     "help": "./dist/bundle.js h"
+  },
+  "bin": {
+    "dd-builder": "./dist/ddBuilder.js"
   },
   "repository": {
     "type": "git",
