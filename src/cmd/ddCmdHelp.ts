@@ -11,9 +11,10 @@ import * as R from 'ramda'
 export class ddCmdHelp {
 
   // properties
-  private readonly alias: string
-  private readonly description: string
-  private readonly usage: string
+  private readonly name: string
+  private readonly alias: string[]
+  private readonly description: string[]
+  private readonly usage: string[]
 
   /**
    * constructor
@@ -22,32 +23,40 @@ export class ddCmdHelp {
    * @param description    command description
    * @param usage          command usage
    */
-  constructor(alias: string, description: string, usage: string) {
-    this.alias = alias
-    this.description = description
-    this.usage = usage
+  constructor(name: string, alias: string[], description: string[], usage: string[]) {
+    this.name = name
+    this.alias = alias.slice(0)
+    this.description = description.slice(0)
+    this.usage = usage.slice(0)
   }
+
+  /**
+   * get name for command
+   *
+   * @return    string containing name of the command
+   */
+  public getName(): string { return this.name }
 
   /**
    * get alias for command
    *
    * @return    string containing command alias
    */
-  public getAlias(): string { return this.alias }
+  public getAlias(): string[] { return this.alias }
 
   /**
    * get description for command
    *
    * @return    string containing command description
    */
-  public getDescription(): string { return this.description }
+  public getDescription(): string[] { return this.description }
 
   /**
    * get usage for command
    *
    * @return    string containing command usage
    */
-  public getUsage(): string { return this.usage }
+  public getUsage(): string[] { return this.usage }
 
   /**
    * get full help string
@@ -55,7 +64,8 @@ export class ddCmdHelp {
    * @return    string containing alias('), description, and usage info for the command
    */
   public getFullHelp(): string {
-    return this.alias.concat(`\n`, this.description, `\n`, this.usage)
+    // TODO impl
+    return ''
   }
 
 }

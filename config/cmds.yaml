@@ -7,13 +7,13 @@
 #############
 ddBuilder:
 
-  #######
-  # cmd #
-  #######
-  cmd:
+  ########
+  # cmds #
+  ########
+  cmds:
     # help
     help:
-      cmd: "help"
+      name: "help"
       alias:
         - "h"
         - "-h"
@@ -24,7 +24,7 @@ ddBuilder:
         - "$ dd-builder h"
     # build
     build:
-      cmd: "build"
+      name: "build"
       alias:
         - "b"
         - "-b"

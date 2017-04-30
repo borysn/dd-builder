@@ -4,8 +4,6 @@
  * license: MIT
  */
 
-import * as R from 'ramda'
-
 import { ddCmdHelp } from './ddCmdHelp'
 import { ddProps } from '../props/ddProps'
 
@@ -21,23 +19,17 @@ export class ddCmdHelpFactory {
    * create help object for given command
    */
   public static createHelpObj(cmd: string): ddCmdHelp {
-    // pulling from cmds.yaml
-    let propSet: string = 'cmds'
-
+    // get name
+    let name: string = ddCmdHelpFactory.props.getPropValue(`ddBuilder.cmds.${cmd}.name`)[0]
     // get alias string
-    let alias: string = R.join(', ',
-      ddCmdHelpFactory.props.getPropValue(propSet, `ddBuilder.cmd.${cmd}.alias`))
-
+    let alias: string[] = ddCmdHelpFactory.props.getPropValue(`ddBuilder.cmds.${cmd}.alias`)
     // get usage string
-    let usage: string = R.join('\n',
-      ddCmdHelpFactory.props.getPropValue(propSet, `ddBuilder.cmd.${cmd}.usage`))
-
+    let usage: string[] = ddCmdHelpFactory.props.getPropValue(`ddBuilder.cmds.${cmd}.usage`)
     // get description
-    let description: string = R.join(`\n`,
-      ddCmdHelpFactory.props.getPropValue(propSet, `ddBuilder.cmd.${cmd}.description`))
+    let description: string[] = ddCmdHelpFactory.props.getPropValue(`ddBuilder.cmds.${cmd}.description`)
 
     // return ddCmdHelp object
-    return new ddCmdHelp(alias, description, usage)
+    return new ddCmdHelp(name, alias, description, usage)
   }
 
 }

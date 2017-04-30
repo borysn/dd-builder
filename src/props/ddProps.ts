@@ -48,13 +48,19 @@ export class ddProps {
    * @param prop    target property
    * @returns       target property value(s) as string array, empty array if not found
    */
-  public getPropValue(set: string, prop: string): Array<string> {
+  public getPropValue(prop: string): string[] {
     // init return
-    let value: Array<string> = new Array<string>()
+    let value: string[] = new Array<string>();
+
+    // get prop set
+    let propSet: string = this.getPropSet(prop)
 
     // attempt to get property value
-    if (this.props.has(set)) {
-      value = jsonpath.value(this.props.get(set), prop)
+    if (this.props.has(propSet)) {
+      value = jsonpath.value(this.props.get(propSet), prop)
+      if(!value) {
+        // TODO throw exception
+      }
     } else {
       // TODO throw exception
     }
@@ -71,6 +77,22 @@ export class ddProps {
     return this.props
   }
 
+  /**
+   * infer properties set from prop string
+   *
+   * @param prop    string containing target property
+   * @returns       string containig property set name
+   */
+  private getPropSet(prop: string): string {
+    // return val
+    let propSet = prop.split('.')[1]
+    // valid prop set
+    if(!this.props.has(propSet)) {
+      // TODO throw exception
+    }
+    // return
+    return propSet
+  }
   /**
    * get fileName `<project root>/config/<fileName>.yaml` using string.match
    *
@@ -90,8 +112,7 @@ export class ddProps {
       R.forEach(file => {
         try {
           let config: any = yaml.safeLoad(fs.readFileSync(path.resolve(file), 'utf-8'))
-          let json: any = JSON.parse(JSON.stringify(config))
-          this.props.set(this.getFileName(file), json)
+          this.props.set(this.getFileName(file), config)
         } catch(e) {
           console.log(e)
         }
