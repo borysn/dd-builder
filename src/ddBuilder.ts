@@ -9,7 +9,6 @@
 import * as ddBuilder from 'commander'
 import * as chalk from 'chalk'
 
-import { ddCmd } from './cmd/ddCmd'
 import { ddCmdFactory } from './cmd/ddCmdFactory'
 import { ddLogger } from './logging/ddLogger'
 
