@@ -50,7 +50,7 @@ export class ddProps {
    */
   public getPropValue(prop: string): string[] {
     // init return
-    let value: string[] = new Array<string>();
+    let value: string[] = new Array<string>()
 
     // get prop set
     let propSet: string = this.getPropSet(prop)

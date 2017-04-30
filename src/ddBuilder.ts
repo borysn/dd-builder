@@ -10,10 +10,10 @@ import * as ddBuilder from 'commander'
 import * as chalk from 'chalk'
 
 import { ddCmdFactory } from './cmd/ddCmdFactory'
-import { ddLogger } from './logging/ddLogger'
+import { ddLogger } from './log/ddLogger'
 
 // logger
-const log: ddLogger = ddLogger.getInstance();
+const log: ddLogger = ddLogger.getInstance()
 
 /**
  * ddBuilder version
