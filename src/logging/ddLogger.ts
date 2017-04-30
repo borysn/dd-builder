@@ -19,7 +19,7 @@ export class ddLogger {
    * constructor
    */
   private constructor() {
-    log4js.configure('../../config/log4js.json', { reloadSecs: 100 })
+    log4js.configure('./config/log4js.json', { reloadSecs: 100 })
     this.logger = log4js.getLogger('clustered')
   }
 
@@ -29,7 +29,7 @@ export class ddLogger {
    * @returns    instance of ddLogger
    */
   public static getInstance():ddLogger {
-    if(!ddLogger) {
+    if(!ddLogger.instance) {
       ddLogger.instance = new ddLogger()
     }
     return ddLogger.instance

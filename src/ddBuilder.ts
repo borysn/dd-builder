@@ -29,8 +29,12 @@ ddBuilder
   .alias('-h')
   .alias('--help')
   .action((cmd, rest) => {
+    // log
     log.info('help cmd invoked')
+    // run help command
     ddCmdFactory.getHelpCmd().exec(cmd, rest)
+    // successful exit
+    process.exit(0);
   })
 
 /**
@@ -42,8 +46,12 @@ ddBuilder
   .alias('-b')
   .alias('--build')
   .action((cmd, rest) => {
+    // log
     log.info('build cmd invoked')
+    // run build command
     ddCmdFactory.getBuildCmd().exec(cmd, rest)
+    // successful exct
+    process.exit(0);
   })
 
 /**

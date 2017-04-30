@@ -7,11 +7,10 @@
     "test": "test",
     "doc": "typedoc --out ./dist/docs ./src",
     "lint": "tslint --project ./tsconfig.json --type-check ./src/**/*.ts",
-    "prestart": "npm run build",
-    "start": "./dist/ddBuilder.js",
+    "ddBuilder": "node ./dist/ddBuilder.js",
     "prebuild": "npm run lint",
     "build": "tsc",
-    "watch": "npm run build -w",
+    "watch": "tsc -w",
     "help": "./dist/bundle.js h"
   },
   "bin": {

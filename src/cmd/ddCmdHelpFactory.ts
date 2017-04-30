@@ -26,15 +26,15 @@ export class ddCmdHelpFactory {
 
     // get alias string
     let alias: string = R.join(', ',
-      ddCmdHelpFactory.props.getPropValue(propSet, `$ddBuilder.cmd.${cmd}.alias`))
+      ddCmdHelpFactory.props.getPropValue(propSet, `ddBuilder.cmd.${cmd}.alias`))
 
     // get usage string
     let usage: string = R.join('\n',
-      ddCmdHelpFactory.props.getPropValue(propSet, `$ddBuilder.cmd.${cmd}.usage`))
+      ddCmdHelpFactory.props.getPropValue(propSet, `ddBuilder.cmd.${cmd}.usage`))
 
     // get description
     let description: string = R.join(`\n`,
-      ddCmdHelpFactory.props.getPropValue(propSet, `$ddBuilder.cmd.${cmd}.description`))
+      ddCmdHelpFactory.props.getPropValue(propSet, `ddBuilder.cmd.${cmd}.description`))
 
     // return ddCmdHelp object
     return new ddCmdHelp(alias, description, usage)
