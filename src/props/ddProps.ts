@@ -108,18 +108,18 @@ export class ddProps {
    * parse yaml properties files
    */
   private parseProps(): void {
-    try {
-      R.forEach(file => {
-        try {
-          let config: any = yaml.safeLoad(fs.readFileSync(path.resolve(file), 'utf-8'))
-          this.props.set(this.getFileName(file), config)
-        } catch(e) {
-          console.log(e)
-        }
-      }, ddProps.propFiles)
-    } catch (e) {
-      console.log(e)
-    }
+    // process each config file
+    R.forEach(file => {
+      try {
+        // load yaml config
+        let config: any = yaml.safeLoad(fs.readFileSync(path.resolve(file), 'utf-8'))
+        // store config in map with filename as the key
+        this.props.set(this.getFileName(file), config)
+      } catch(e) {
+        // log config file load error
+        console.log(e)
+      }
+    }, ddProps.propFiles)
   }
 
 }
