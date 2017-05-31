@@ -4,7 +4,7 @@
   "description": "create desktop dialogues using haml, sass, and js",
   "main": "src/ddBuilder.ts",
   "scripts": {
-    "test": "test",
+    "test": "mocha -r ts-node/register src/**/*.test.ts",
     "doc": "typedoc --out ./dist/docs ./src",
     "lint": "tslint --project ./tsconfig.json --type-check ./src/**/*.ts",
     "ddBuilder": "node ./dist/ddBuilder.js",
