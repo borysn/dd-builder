@@ -40,14 +40,16 @@
     // "rootDirs": [],
     // "typeRoots": [],
     "types": [
-      "node",
-      "commander",
+      "chai",
       "chalk",
+      "commander",
       "electron",
-      "ramda",
-      "log4js",
       "js-yaml",
-      "jsonpath"
+      "jsonpath",
+      "log4js",
+      "mocha",
+      "node",
+      "ramda"
     ],
     // "allowSyntheticDefaultImports": true,
     // "mapRoot": "./",
